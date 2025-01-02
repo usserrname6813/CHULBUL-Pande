@@ -1,0 +1,4 @@
+requests
+BlaApi 
+html2text
+markdownify 
