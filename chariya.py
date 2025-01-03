@@ -47,15 +47,17 @@ def main():
 
     previous_diaries = []  # Store previously sent diary IDs
 
-    # Get initial 2 homework entries
-    date = c.get_current_date()
-    initial_diaries = c.search_by_student(student_id=student_id)
-    initial_diaries = c.search_by_date(date, passthru=initial_diaries) 
-    for diary in initial_diaries[:2]:  # Get the first 2 diaries
-        previous_diaries.append(diary['notificationId'])
-        formatted_data = format_diary([diary])
-        for message in formatted_data:
-            send_to_discord(message)
+    # Get initial 2 homework entries (optional)
+    # You can uncomment this block to send the first 2 entries
+    # upon startup
+    # date = c.get_current_date()
+    # initial_diaries = c.search_by_student(student_id=student_id)
+    # initial_diaries = c.search_by_date(date, passthru=initial_diaries) 
+    # for diary in initial_diaries[:2]:  # Get the first 2 diaries
+    #     previous_diaries.append(diary['notificationId'])
+    #     formatted_data = format_diary([diary])
+    #     for message in formatted_data:
+    #         send_to_discord(message)
 
     while True:
         try:
