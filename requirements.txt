@@ -1,4 +1,4 @@
 requests
-BlaApi 
+BlaApi
 html2text
-markdownify 
+markdownify
